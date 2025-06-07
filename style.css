@@ -1,34 +1,94 @@
+.calculator {
+    background-color: #eee7ca;
+    display: flex;
+    width: 500px;
+    height: auto;
+    flex-direction: column;
+    align-items: baseline;
+    padding: 15px;
+    border: 1px solid darkgrey;
+    margin-left: 20%;
+}
+
 .display {
-    background-color: slategray;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #1e7069;
     color: azure;
-    height: 2em;
-    width: 40%;
+    height: 2rem;
+    width: 90%;
+    border: 5px ridge black;
     align-content: center;
     justify-content: center;
-    padding: 1em;
+    padding: 1rem;
+    font-weight: 700;
+    margin: .5rem;
+    margin-bottom: 1.5rem;
 }
-.buttons {
-    font-weight: 900;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+button {
     font-size: large;
-    display: flex;
-
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
-.numbers {
-    width: 200;
-    height: auto;
+.buttons {
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-items: baseline;
+    justify-content: space-around; /* I don't know why this doesn't work */
 }
 
-.operators {
-    width: 200;
-    height: auto;
+.buttons > .numbers, .operators, .removal {
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-items: baseline;
+    /* justify-content: baseline; */
 }
 
-.return {
-    width: 200;
-    height: 350;
+.numbers > button {
+    background-color: #32a4a7;
     display: flex;
+    flex-basis: 3rem;
+    justify-content: center;
+}
+
+.operators > button {
+    background-color: #44d1df;
+    display: flex;
+    flex-basis: 3rem;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    justify-items: center;
+}
+
+.operate {
+    flex-grow: 1;
+    align-self: flex-end;
+}
+
+.removal {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+.removal > button {
+    background-color: #f44560;
+    width: 110px;
+    height: 35px;
+    display: flex;
+    flex-basis: 4rem;
+    justify-content: center;
+    align-self: center;
+    align-items: center;
+}
+
+.disclaimer {
+    margin-left: 20%;
+    font-weight: 100;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+    color: #333333;
 }

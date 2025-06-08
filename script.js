@@ -1,21 +1,25 @@
 // constants
-let displayBox = document.querySelector(".display");
+let displayBox = document.querySelector(".displayL");
+let displayUpper = document.querySelector(".displayU");
 let OPERATION = [];
 let numberButton = document.querySelectorAll(".number");
 let operatorButton = document.querySelectorAll(".operator");
 let clearButton = document.querySelector(".clear");
 let backButton = document.querySelector(".backspace");
 let equalButton = document.querySelector(".operate");
+let answer;
 let isAnswerDisplayed = false;
 
 const clickNumber = function() {
     var numbervalue = this.textContent;
      if (isAnswerDisplayed) {
         displayBox.innerText = "";
+        displayUpper.innerText = answer;
         isAnswerDisplayed = false;
     };
     if (displayBox.innerText === "+" || displayBox.innerText === "-" || displayBox.innerText === "*" || displayBox.innerText === "/") {
         if (displayBox !== "") {OPERATION.push(displayBox.innerText);
+            displayUpper.innerText = OPERATION.toString().replace(/,/g, "");
             displayBox.innerText = "";
             displayBox.innerText += numbervalue;
         };
@@ -31,6 +35,7 @@ const clickOperator = function() {
     isAnswerDisplayed = false;
     var operatorValue = this.textContent;
     if (displayBox !== "") {OPERATION.push(displayBox.innerText);
+        displayUpper.innerText = OPERATION.toString().replace(/,/g, "");
         displayBox.innerText = "";     
         displayBox.innerText += operatorValue;
     };
@@ -49,6 +54,7 @@ const backSpace = function() {
 
 const clearDisplay = function() { 
             displayBox.innerText = "";
+            displayUpper.innerText = "";
             OPERATION = []; 
 };
 
@@ -90,6 +96,7 @@ clearButton.addEventListener("click", clearDisplay);
 
 const operate = function() {
     if (displayBox !== "") {OPERATION.push(displayBox.innerText)};
+    displayUpper.innerText = OPERATION.toString().replace(/,/g, "");
     OPERATION = OPERATION.filter(item => item !== "");
      if (OPERATION.length != 3) {
         alert("Please press Clear, enter a calculation, and try again.");

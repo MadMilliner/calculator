@@ -3,12 +3,17 @@ let displayBox = document.querySelector(".displayL");
 let displayUpper = document.querySelector(".displayU");
 let OPERATION = [];
 let numberButton = document.querySelectorAll(".number");
+let negativeButton = document.querySelector(".negative");
 let operatorButton = document.querySelectorAll(".operator");
 let clearButton = document.querySelector(".clear");
 let backButton = document.querySelector(".backspace");
 let equalButton = document.querySelector(".operate");
 let answer;
 let isAnswerDisplayed = false;
+
+const clickNegative = function() {
+    if (displayBox.innerText.includes("-")) {
+        displayBox.innerText = displayBox.innerText.replace("-", "")} else {displayBox.innerText = "-" + displayBox.innerText;}};
 
 const clickNumber = function() {
     var numbervalue = this.textContent;
@@ -82,6 +87,8 @@ const divide = function(num1, num2) {
 
 
 // Button clicks
+negativeButton.addEventListener("click", clickNegative);
+
 numberButton.forEach(numberButton => {
     numberButton.addEventListener("click", clickNumber);
 });

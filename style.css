@@ -70,7 +70,7 @@ button {
 .numbers > button {
     background-color: #32a4a7;
     display: flex;
-    flex-basis: 3rem;
+    flex-basis: 26%;
     justify-content: center;
 }
 

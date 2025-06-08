@@ -3,7 +3,7 @@ let displayBox = document.querySelector(".displayL");
 let displayUpper = document.querySelector(".displayU");
 let OPERATION = [];
 let numberButton = document.querySelectorAll(".number");
-let negativeButton = document.querySelector(".negative");
+// let negativeButton = document.querySelector(".negative");
 let operatorButton = document.querySelectorAll(".operator");
 let clearButton = document.querySelector(".clear");
 let backButton = document.querySelector(".backspace");
@@ -11,9 +11,9 @@ let equalButton = document.querySelector(".operate");
 let answer;
 let isAnswerDisplayed = false;
 
-const clickNegative = function() {
-    if (displayBox.innerText.includes("-")) {
-        displayBox.innerText = displayBox.innerText.replace("-", "")} else {displayBox.innerText = "-" + displayBox.innerText;}};
+// const clickNegative = function() {
+//     if (displayBox.innerText.includes("-")) {
+//         displayBox.innerText = displayBox.innerText.replace("-", "")} else {displayBox.innerText = "-" + displayBox.innerText;}};
 
 const clickNumber = function() {
     var numbervalue = this.textContent;
@@ -22,14 +22,14 @@ const clickNumber = function() {
         displayUpper.innerText = answer;
         isAnswerDisplayed = false;
     };
-    if (displayBox.innerText === "+" || displayBox.innerText === "-" || displayBox.innerText === "*" || displayBox.innerText === "/") {
+    if (displayBox.innerText === "+" || displayBox.innerText === "-" || 
+        displayBox.innerText === "*" || displayBox.innerText === "/") {
         if (displayBox !== "") {OPERATION.push(displayBox.innerText);
             displayUpper.innerText = OPERATION.toString().replace(/,/g, "");
             displayBox.innerText = "";
             displayBox.innerText += numbervalue;
         };
         displayBox.innerText = "";
-        // OLD CODE, PROBABLY DELETE displayBox.innerText += numbervalue;
     };
     displayBox.innerText += numbervalue;
     
@@ -87,7 +87,7 @@ const divide = function(num1, num2) {
 
 
 // Button clicks
-negativeButton.addEventListener("click", clickNegative);
+// negativeButton.addEventListener("click", clickNegative);
 
 numberButton.forEach(numberButton => {
     numberButton.addEventListener("click", clickNumber);

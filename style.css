@@ -1,5 +1,6 @@
 .calculator {
     background-color: #eee7ca;
+    background: linear-gradient(358deg,rgba(220, 213, 186, 1) 0%, rgba(255, 247, 216, 1) 100%);
     display: flex;
     width: 550px;
     height: auto;
